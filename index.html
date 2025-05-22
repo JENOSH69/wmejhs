@@ -265,12 +265,18 @@
 
   // Read More / Read Less toggle for paragraphs
   document.querySelectorAll('.read-more-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const paragraph = this.previousElementSibling;
-      paragraph.classList.toggle('expanded');
-      this.textContent = paragraph.classList.contains('expanded') ? 'Read Less' : 'Read More';
-    });
+  button.addEventListener('click', () => {
+    const text = button.previousElementSibling;  // the paragraph
+    if (text.classList.contains('expanded')) {
+      text.classList.remove('expanded');
+      button.textContent = "Read More";
+    } else {
+      text.classList.add('expanded');
+      button.textContent = "Read Less";
+    }
   });
+});
+
 </script>
 
 
