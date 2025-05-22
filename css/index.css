@@ -142,44 +142,6 @@ header {
 .dropdown-menu.active-submenu {
   display: flex;
 }
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background-color: #004080;
-  }
-  .dropdown-menu.show
-  {
-    display: block;
-  }
-
-  .dropdown-menu li a {
-    color: white;
-  }
-
-  .dropdown-menu li a:hover {
-    background-color: #005599;
-  }
-}
 
 .hero {
   background:  url('../Images/ba.jpg') center/cover no-repeat;
@@ -398,92 +360,9 @@ header {
   animation: slideInLeft 1s ease-out forwards;
 }
 
-/* Overview Section Styling */
-#overview {
-    background-color: #e8eef3;  /* Light grayish-blue background */
-    padding: 60px 20px;
-    color: #333;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Section Title Styling */
-#overview h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #00509E;  /* Blue color for the title */
-    margin-bottom: 20px;
-}
-
-/* Overview Content Grid for Four Columns */
-.overview-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* Four equal columns */
-    gap: 40px;  /* Space between the boxes */
-    text-align: left;
-}
-
-/* Overview Boxes */
-.overview-box {
-    background-color: white;  /* White background for text blocks */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover Effect */
-.overview-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Stronger shadow on hover */
-}
-
-/* Subheading for Each Box */
-.overview-box h3 {
-    font-size: 1.5em;
-    color: #00509E;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #C1D9E7;
-    padding-bottom: 10px;
-}
-
-/* Text Styling in Boxes */
-.overview-box p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-}
-/* Icon Styling */
-.overview-box i, .about-box i {
-    color: #00509E;  /* Blue color for icons */
-    margin-bottom: 15px;
-    display: block;  /* Ensures the icon appears above the heading */
-}
-
-.overview-box h3, .about-box h3 {
-    margin-top: 10px;  /* Add space between icon and heading */
-}
-
-/* Size adjustments (optional) */
-.overview-box i.fa-2x, .about-box i.fa-2x {
-    font-size: 2.5em;  /* Adjust icon size */
-}
 
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 1024px) {
-    .overview-content {
-        grid-template-columns: repeat(2, 1fr);  /* Two columns for tablets */
-    }
-}
 
-@media (max-width: 768px) {
-    .overview-content {
-        grid-template-columns: 1fr;  /* Single column for mobile devices */
-    }
-}
 .about-section-header {
   text-align: center;
   padding: 40px 0 20px;
@@ -597,74 +476,10 @@ header {
   border-radius: 4px;
 }
 
-/* ✅ Responsive Styles */
-@media (max-width: 768px) {
-  .about-box {
-    flex-direction: column;
-    max-width: 90%;
-  }
-
-  .about-img {
-    width: 100%;
-    height: 200px;
-  }
-
-  .divider {
-    width: 100%;
-    height: 2px;
-  }
-
-  .about-text {
-    width: 100%;
-  }
-}
 
 
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
 
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;  /* ✅ FIX: Use white background */
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    display: none;
-    padding: 1rem;
-    z-index: 999; /* Make sure it's above content */
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-  .nav-links a {
-    color: #333 !important; /* or black: #000 */
-  }
-
-  .nav-links a:hover {
-    color: #004080; /* blue on hover */
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background-color: white;  /* ✅ White dropdowns too */
-  }
-
-  .dropdown-menu li a {
-    color: whitesmoke;
-  }
-
-  .dropdown-menu li a:hover {
-    background-color: #f0f0f0;
-  }
-}
 
 
 
@@ -728,10 +543,138 @@ header {
   font-size: 15px;
   color: #555;
 }
+/* Existing base styles omitted for brevity */
 
-@media (max-width: 600px) {
-  .contact-box {
+/* Mobile & Tablet Nav & Dropdown Fixes */
+@media (max-width: 1024px) {
+  /* Tablet nav: show menu toggle */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Navigation links stack vertically on tablets */
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
     width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 9999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Dropdown menu adjustments */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: white;
+    width: 100%;
+  }
+
+  .dropdown-menu li a {
+    color: #333;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+  /* Hero text size and padding */
+  .hero {
+    padding: 60px 15px 40px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Stack the three boxes vertically */
+  #three-box-section {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
+
+  .box, .box1, .box2 {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Overview content single column */
+  
+
+  /* About boxes stack */
+  .about-box {
+    flex-direction: column;
+    max-width: 90%;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .divider {
+    width: 100%;
+    height: 2px;
+    margin: 15px 0;
+  }
+
+  .about-text {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  /* Navigation links colors */
+  .nav-links a {
+    color: #333 !important;
+    font-size: 1.1rem;
+  }
+
+  .nav-links a:hover {
+    color: #004080;
+  }
+
+  /* Dropdown menu link colors */
+  .dropdown-menu li a {
+    color: #333 !important;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #eaeaea;
+  }
+}
+
+/* Tablet view for overview content */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .overview-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  #three-box-section {
+    flex-wrap: wrap;
+  }
+
+  .box, .box1, .box2 {
+    max-width: 48%;
   }
 }
 
